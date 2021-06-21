@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block style %}
+<link href="/static/styles.css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+Files Retrieved
+{% endblock %}
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-3">Retrieved files from CANLII</h2>
+            <hr>
+            <form action="/results/{{enc_name}}" method="post">
+                <button class="btn btn-primary" type="submit">Download PDF <span class="badge badge-light">
+                        {{file_size}} </span></button>
+            </form><br>
+        </div>
+    </div>
+
+    <div class="alert alert-info alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Info!</strong> Please remember to allow your browser to download files from this website.
+    </div>
+    {% if fails %}
+    <div class="alert alert-warning alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Warning!</strong> Could not find the below files.
+    </div>
+    {% endif %}
+    <ol class="list-group list-group-flush">
+        {% for item in fails %}
+        <li class="list-group-item">{{item}}</li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}

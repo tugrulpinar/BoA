@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<!-- Web Font -->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+
+<!-- icons library -->
+<link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
+
+<!-- StyleSheet -->
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="static/css/bootstrap.css">
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="static/css/magnific-popup.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="static/css/font-awesome.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="static/css/LineIcons.css">
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="static/css/owl-carousel.css">
+<!-- Slicknav -->
+<link rel="stylesheet" href="static/css/slicknav.min.css">
+<!-- Animat -->
+<link rel="stylesheet" href="static/css/animate.css">
+
+<!-- Appkit StyleSheet -->
+<link rel="stylesheet" href="static/css/reset.css">
+<link rel="stylesheet" href="static/style_imported.css">
+<link rel="stylesheet" href="static/css/responsive.css">
+
+<!-- Color CSS -->
+<link rel="stylesheet" href="static/css/color/color1.css">
+<!--<link rel="stylesheet" href="css/color/color2.css">-->
+<!--<link rel="stylesheet" href="css/color/color3.css">-->
+<!--<link rel="stylesheet" href="css/color/color4.css">-->
+
+<link rel="stylesheet" href="#" id="colors">
+<!-- Jquery -->
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/jquery-migrate-3.0.0.js"></script>
+<script src="static/js/jquery-ui.min.js"></script>
+<!-- Popper JS -->
+<script src="static/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="static/js/bootstrap.min.js"></script>
+<!-- Color JS -->
+<script src="static/js/colors.js"></script>
+<!-- Steller JS -->
+<script src="static/js/steller.js"></script>
+<!-- Slicknav JS -->
+<script src="static/js/slicknav.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="static/js/owl-carousel.js"></script>
+<!-- Magnific Popup JS -->
+<script src="static/js/magnific-popup.js"></script>
+<!-- Waypoints JS -->
+<script src="static/js/waypoints.min.js"></script>
+<!-- Wow Min JS -->
+<script src="static/js/wow.min.js"></script>
+<!-- Jquery Counterup JS -->
+<script src="static/js/jquery-counterup.min.js"></script>
+<!-- Ytplayer JS -->
+<script src="static/js/ytplayer.min.js"></script>
+<!-- ScrollUp JS -->
+<script src="static/js/scrollup.js"></script>
+<!-- Onepage Nav JS -->
+<script src="static/js/onepage-nav.min.js"></script>
+<!-- Easing JS -->
+<script src="static/js/easing.js"></script>
+<!-- Active JS -->
+<script src="static/js/active.js"></script>
+
+{% endblock %}
+
+
+{% block title %}
+Home | Book of Authorities
+{% endblock %}
+
+{% block main %}
+
+<div id="spinners" class="container" style="text-align: center; visibility: hidden;">
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-3">Retrieving files from CANLII</h2><br>
+            <div class="spinner-grow text-muted"></div>
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-light"></div><br>
+        </div>
+    </div>
+</div>
+
+<div id="submission" style="visibility: visible;">
+    <section class="hero-header primary-header slider-header" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12">
+                    <div class="hero-header-content">
+                        <!-- <p>Plan your life</p> -->
+                        <h1>Increase your <b>productivity</b></h1>
+                        <p>
+                            Copy and paste your list of case law and let the App handle retrieving, indexing,
+                            bookmarking, and merging of the documents.
+                        </p>
+                        <div class="button">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-12">
+                    <div class="hero-header-image">
+                        <img src="static/img/hero-image.svg" alt="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about-us" class="work section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2> Paste Your List Inside The Textbox </h2>
+                        <p>Ex: Ali v Canada (MCI), 2008 FC 448 at para 27</p>
+                        <p>Kahsay v Canada (MCI), 2017 FC 116 at para 29
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="text-align: center;">
+        <div class="row">
+            <div class="col">
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <textarea class="form-control" name="textbox" rows="40" cols="20" autocomplete="off" autofocus
+                            required maxlength="4000">
+            </textarea>
+                    </div>
+                    <button id="submit" class=" btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        let submit_button = document.querySelector("#submit");
+        submit_button.addEventListener('click', function (event) {
+            document.querySelector("#submission").style.visibility = "hidden";
+            document.querySelector("#spinners").style.visibility = "visible";
+            window.scrollTo(0, 0);
+        })
+    });
+</script>
+{% endblock %}

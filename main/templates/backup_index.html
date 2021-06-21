@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home | Book of Authorities
+{% endblock %}
+
+{% block main %}
+<div id="spinners" class="container" style="visibility: hidden;">
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-3">Retrieving files from CANLII</h2>
+            <div class="spinner-grow text-muted"></div>
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-light"></div>
+        </div>
+    </div>
+</div>
+
+<!-- jumbotron, container -->
+<div id="index_jumbotron" class="jumbotron" style="visibility: visible;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="mt-3">Please paste your list inside text box</h3>
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <textarea class="form-control" name="textbox" rows="25" cols="80" autocomplete="off" autofocus
+                            required>
+                </textarea>
+                    </div>
+                    <button id="submit" class=" btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        let submit_button = document.querySelector("#submit");
+        submit_button.addEventListener('click', function (event) {
+            document.querySelector("#index_jumbotron").style.visibility = "hidden";
+            document.querySelector("#spinners").style.visibility = "visible";
+        })
+    });
+</script>
+{% endblock %}
